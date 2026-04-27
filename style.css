@@ -20,6 +20,27 @@ h2, h3 {
     text-align: center;
 }
 
+header {
+    display: inline;
+}
+
+nav {
+    background-color: #00a2c6;
+    padding: 5px;
+    position: sticky;
+    top: 0;
+}   
+
+nav ul {
+    padding-inline: 4rem;
+    display: flex;
+    gap: 2rem;
+}
+
+nav li {
+    list-style-type: none;
+}
+
 nav a {
     font-size: 18px;
     font-weight: 400;
@@ -31,23 +52,11 @@ nav a:hover {
     font-weight: bold;
 }
 
-nav li {
-    list-style-type: none;
-    margin-right: 20px;
-}
-
-header {
-    display: inline;
-}
-
-nav {
-    background-color: #00a2c6;
-    padding: 5px;
-}
 
 main {
     padding: 20px;
-    overflow: auto;
+    display: flex;
+    gap: 1.5rem;
 }
 
 article {
@@ -73,7 +82,6 @@ article {
     box-shadow: 0px 4px 20px 1px rgba(0,0,0,0.15) ;
     border-radius: 5px;
     padding: 20px;
-    margin-top: 20px;
 }
 
 
@@ -82,11 +90,14 @@ th {
 }
 
 #content {
-  
+  flex: 5;
+  display: flex;
+  flex-flow: column nowrap;
+  gap: 1rem 2rem;
 }
 
 aside {
- 
+ flex: 1;
 }
 
 aside section {
@@ -105,9 +116,21 @@ footer {
     font-weight: bold;
 }
 
-@media screen and (max-width: 1000px) {
-    #content, aside {
-        width: 100%;
-        padding: 0;
+@media screen and (max-width: 1200px) {
+    main {
+        flex-flow: column nowrap;
+    }
+    
+    main aside {
+        align-self: center;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    nav ul {
+        justify-content: center;
+    }
+    main aside {
+        align-self: stretch;
     }
 }
